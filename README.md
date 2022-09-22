@@ -33,10 +33,10 @@ Stocks are selected manually, future versions may include automatic stock select
 
 The 10 stocks with the largest market capitalisation that meet these requirements are selected:
 
-*free float > 20%
-*EPS        > 0
-*P/E        < 20
-*P/S        < 15
+* free float > 20%
+* EPS        > 0
+* P/E        < 20
+* P/S        < 15
 
 ## Indicators <a name="indicators"></a>
 
