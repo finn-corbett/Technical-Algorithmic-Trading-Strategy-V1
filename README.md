@@ -63,6 +63,24 @@ A sell signal is generated if:
 $10000 is allocated to each of the 10 stocks, and any losses or gains are applied to this value, so that underperforming stocks take up a smaller portion of the portfolio, whilst overperforming stocks take up a larger portion. Any buy or sell signal sells and buys a stock with all of the money available to the stock. 
 
 ## Performance <a name="performance"></a>
-a
+
+This algorithm was able to produce 47.9% returns over a 5 year period, resulting in an average annual yield of 9.6%. The S&P500 was able to produce 61.7% returns over the same period, for an average annual yield of 12.3%.
+
+This algorithm was able to outperform a buy and hold strategy for the same stocks by 5.4% over the 5 year period, suggesting that this strategy has the ability to take advantage of market trends.
+
 ## Conclusion <a name="conclusion"></a>
-a
+
+The performance of this strategy is not outstanding, but it was able to outperform a buy and hold strategy for the same stocks over a 5 year period. This shows that the buy and sell signals are somewhat effective in generating returns. This strategy was not able to outperform 'the market' (S&P500 buy and hold strategy), which is considered a benchmark by investors.
+
+The main concerns with this strategy and algorithm are:
+* stock selection uses current data, but is tested historically. This makes the backtest innacurate for future results.
+* stop losses are not yet implimented, meaning that the algorithm may lose excessive amounts of money to large crashes.
+* 10 stocks is not a very diverse selection, which increases portfolio risk
+* algorithm must wait 30 days to calculate indicators properly, resulting in 30 days downtime when it is initiated
+
+Future improvements should include:
+* automated stock selection and yearly reselection
+* stop losses
+* more technical indicators with stacked LTSM model to learn which indicators are most effective for each stock
+* more computationally efficient indicator calculation
+* 
