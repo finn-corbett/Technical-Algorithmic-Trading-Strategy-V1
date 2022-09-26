@@ -69,25 +69,25 @@ This algorithm was able to produce 29.76% returns over a 5 year period.
 The S&P500 was able to produce 60.18% returns over the same period.
 A buy and hold strategy for the same 10 stocks yielded 40.34% over the same period.
 ### Performance Charts
-*### META
+* ### META
 ![alt text](https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images/META%20Chart.png)
-*### XOM
+* ### XOM
 ![alt text](https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images/XOM%20Chart.png)
-*### JPM
+* ### JPM
 ![alt text](https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images/JPM%20Chart.png)
-*### CVX
+* ### CVX
 ![alt text](https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images/CVX%20Chart.png)
-*### HD
+* ### HD
 ![alt text](https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images/HD%20Chart.png)
-*### BAC
+* ### BAC
 ![alt text](https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images/BAC%20Chart.png)
-*### PFE
+* ### PFE
 ![alt text](https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images/PFE%20Chart.png)
-*### ABBV
+* ### ABBV
 ![alt text](https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images/ABBV%20Chart.png)
-*### MRK
+* ### MRK
 ![alt text](https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images/MRK%20Chart.png)
-*### CSCO
+* ### CSCO
 ![alt text](https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images/CSCO%20Chart.png)
 
 ## Conclusion <a name="conclusion"></a>
