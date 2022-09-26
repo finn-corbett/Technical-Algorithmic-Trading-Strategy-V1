@@ -70,7 +70,7 @@ The S&P500 was able to produce 60.18% returns over the same period.
 A buy and hold strategy for the same 10 stocks yielded 40.34% over the same period.
 
 ### META Chart
-[!alt text](https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images/ABBV%20Chart.png)
+![alt text](https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images/ABBV%20Chart.png)
 
 ## Conclusion <a name="conclusion"></a>
 
