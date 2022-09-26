@@ -92,17 +92,18 @@ A buy and hold strategy for the same 10 stocks yielded 40.34% over the same peri
 
 ## Conclusion <a name="conclusion"></a>
 
-The performance of this strategy is not outstanding, but it was able to outperform a buy and hold strategy for the same stocks over a 5 year period. This shows that the buy and sell signals are somewhat effective in generating returns. This strategy was not able to outperform 'the market' (S&P500 buy and hold strategy), which is considered a benchmark by investors.
+The performance of this strategy is not outstanding, it is able to generate positive returns, but will not outperform investing (long term) strategies such as 'buy and hold' for the same stocks, or index investing. This shows that the buy and sell signals are somewhat effective in generating returns.
 
 The main concerns with this strategy and algorithm are:
 * stock selection uses current data, but is tested historically. This makes the backtest innacurate for future results.
 * stop losses are not yet implimented, meaning that the algorithm may lose excessive amounts of money to large crashes.
-* 10 stocks is not a very diverse selection, which increases portfolio risk
 * algorithm must wait 30 days to calculate indicators properly, resulting in 30 days downtime when it is initiated
 
-Future improvements should include:
-* automated stock selection and yearly reselection
-* stop losses
+trading-algo-0.2 will include:
+* automated stock selection
 * more technical indicators with stacked LTSM model to learn which indicators are most effective for each stock
 * more computationally efficient indicator calculation
-* 
+
+trading-algo-0.3 and beyond may include:
+* more advanced portfolio allocation, including a cash position, based on volatility
+* sharpe ratio and alpha considerations
