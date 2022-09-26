@@ -12,22 +12,11 @@ start="2017-09-01"
 end="2022-09-01"
 
 # VARIABLE SETUP #
-avg_gain=[]
-avg_loss=[]
 q=0
-RSI_array=[]
-close26_array=[]
-close12_array=[]
-close9_array=[]
-SMA26_array=[]
-SMA12_array=[]
-MACD9_array=[]
-MACDSMA9_array=[]
-EMA26_array=[]
-EMA12_array=[]
-MACDEMA9_array=[]
 algoperformance=pd.DataFrame(columns=Tickers)
 BnHperformance=pd.DataFrame(columns=Tickers)
+B=pd.DataFrame(columns=Tickers)
+S=pd.DataFrame(columns=Tickers)
 
 def RSIarrays(data, i):
     diff=data.iloc[i-1, 3]-data.iloc[i, 3]
@@ -99,6 +88,19 @@ def MACDEMA9arrays(i):
 hsclient = StockHistoricalDataClient(key, secret)
 
 for q in range (0, len(Tickers)):
+    avg_gain=[]
+    avg_loss=[]
+    RSI_array=[]
+    close26_array=[]
+    close12_array=[]
+    close9_array=[]
+    SMA26_array=[]
+    SMA12_array=[]
+    MACD9_array=[]
+    MACDSMA9_array=[]
+    EMA26_array=[]
+    EMA12_array=[]
+    MACDEMA9_array=[]
     quote_request_params=StockLatestQuoteRequest(symbol_or_symbols=Tickers)
     dbar_request_params=StockBarsRequest(
         symbol_or_symbols=Tickers[q],
@@ -109,6 +111,7 @@ for q in range (0, len(Tickers)):
     latest_quote=hsclient.get_stock_latest_quote(quote_request_params)
     bars=hsclient.get_stock_bars(dbar_request_params)
     data=bars.df
+    print(data)
     i=0
     cash=10000
     stock_cnt=0
@@ -124,22 +127,48 @@ for q in range (0, len(Tickers)):
         if  i>26+9 and cash>0 and MACD>MACDEMA9_array[i] and RSI_array[i]>30 and RSI_array[i]>RSI_array[i-1]:
             stock_cnt=cash/data.iloc[i, 3]
             cash=0
-        if  i>26+9 and stock_cnt>0 and MACD<MACDEMA9_array[i] and RSI_array[i]<60 and RSI_array[i]<RSI_array[i-1]:
+            signal=1
+        elif  i>26+9 and stock_cnt>0 and MACD<MACDEMA9_array[i] and RSI_array[i]<60 and RSI_array[i]<RSI_array[i-1]:
             cash=stock_cnt*data.iloc[i, 3]
             stock_cnt=0
+            signal=-1
+        else:
+            signal=0
         PFvalue=cash+stock_cnt*data.iloc[i, 3]
         buynhold=10000*(data.iloc[i, 3]/data.iloc[0, 3])
         if q==0:
             algoperformance=algoperformance.append({Tickers[q]:PFvalue}, ignore_index=True)
             BnHperformance=BnHperformance.append({Tickers[q]:buynhold}, ignore_index=True)
+            if signal==1:
+                B=B.append({Tickers[q]:PFvalue}, ignore_index=True)
+                S=S.append({Tickers[q]:0}, ignore_index=True)
+            elif signal==-1:
+                B=B.append({Tickers[q]:0}, ignore_index=True)
+                S=S.append({Tickers[q]:PFvalue}, ignore_index=True)
+            else:
+                B=B.append({Tickers[q]:0}, ignore_index=True)
+                S=S.append({Tickers[q]:0}, ignore_index=True)
         else:
             algoperformance.iat[i, q]=PFvalue
             BnHperformance.iat[i, q]=buynhold
+            if signal==1:
+                B.iat[i,q]=PFvalue
+                S.iat[i,q]=0
+            elif signal==-1:
+                B.iat[i,q]=0
+                S.iat[i,q]=PFvalue
+            else:
+                B.iat[i,q]=0
+                S.iat[i,q]=0
+
 print(algoperformance)
 print(BnHperformance)
 percentdiff=100*(sum(algoperformance.iloc[-1].tolist())/sum(BnHperformance.iloc[-1].tolist()))
 print(percentdiff)
-endval=sum(algoperformance.iloc[-1].tolist())/10
+endval=sum(BnHperformance.iloc[-1].tolist())
 print(endval)
-algoperformance.to_csv('algoperformance')
-BnHperformance.to_csv('BnHperformance')
+#algoperformance.to_csv('algoperformance.CSV')
+#BnHperformance.to_csv('BnHperformance.CSV')
+#B.to_csv('buy signals.CSV')
+#S.to_csv('sell signals.CSV')
+#data.to_csv('date.CSV')
