@@ -1,5 +1,6 @@
 # trading-algo-0.1
-A simple stock trading algorithm, backtested for 5 years.
+
+A simple stock trading algorithm, backtested for 5 years from Sep 1 2017 to Sep 1 2022.
 
 ## Table of Contents
 
@@ -44,7 +45,7 @@ The algorithm calculates two indicators using the daily closing prices, that is 
 
 MACD is calculated by subtracting the 26 day EMA (exponential moving average) from the 12 day EMA. A signal line is created using the 9 day EMA which the MACD can be compared to, to generate buy and sell signals.
 
-RSI is caculated by looking at the previous 14 losses or gains to see if the price is trending upwards or downwards. I don't know how to show equations on .md files yet so feel free to google exactly how it's calculated, investopedia is a great source.
+RSI is caculated by looking at the previous 14 losses and gains to see if the price is trending upwards or downwards. Feel free to google exactly how it's calculated, investopedia is a great source.
 
 ## Signal Generation <a name="signal-generation"></a>
 
@@ -55,18 +56,21 @@ A buy signal is generated if:
 
 A sell signal is generated if:
 * The MACD value is less than the signal value AND
-* The RSI<60
+* The RSI<60 AND
 * The RSI value is less than the value for the previous period
 
 ## Portfolio Allocation <a name="portfolio-allocation"></a>
 
-$10000 is allocated to each of the 10 stocks, and any losses or gains are applied to this value, so that underperforming stocks take up a smaller portion of the portfolio, whilst overperforming stocks take up a larger portion. Any buy or sell signal sells and buys a stock with all of the money available to the stock. 
+$10000 is allocated to each of the 10 stocks, and any losses or gains are applied to this value, so that underperforming stocks take up a smaller portion of the portfolio, whilst overperforming stocks take up a larger portion. Any buy or sell signal sells and buys a stock with all of the money available to that stock. 
 
 ## Performance <a name="performance"></a>
 
-This algorithm was able to produce 47.9% returns over a 5 year period, resulting in an average annual yield of 9.6%. The S&P500 was able to produce 61.7% returns over the same period, for an average annual yield of 12.3%.
+This algorithm was able to produce 29.76% returns over a 5 year period.
+The S&P500 was able to produce 60.18% returns over the same period.
+A buy and hold strategy for the same 10 stocks yielded 40.34% over the same period.
 
-This algorithm was able to outperform a buy and hold strategy for the same stocks by 5.4% over the 5 year period, suggesting that this strategy has the ability to take advantage of market trends.
+### META Chart
+[!alt text](https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images/ABBV%20Chart.png)
 
 ## Conclusion <a name="conclusion"></a>
 
