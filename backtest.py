@@ -6,8 +6,8 @@ from alpaca.data.timeframe import TimeFrame
 import pandas as pd
 Tickers=['META', 'XOM', 'JPM', 'CVX', 'HD', 'BAC', 'PFE', 'ABBV', 'MRK', 'CSCO']
 paper_market="https://paper-api.alpaca.markets"
-key = "PKXGL3UM3EIW98H8CKD5"
-secret = "9thwX2uaiRD5wwhsvbsdhAtuIisfrXoYeXyj7s97"
+key = "key"
+secret = "secret key"
 start="2017-09-01"
 end="2022-09-01"
 
