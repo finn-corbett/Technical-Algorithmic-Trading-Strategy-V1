@@ -65,30 +65,30 @@ $10000 is allocated to each of the 10 stocks, and any losses or gains are applie
 
 ## Performance <a name="performance"></a>
 
-This algorithm was able to produce 29.76% returns over a 5 year period.
+This algorithm was able to produce 33.50% returns over a 5 year period.
 The S&P500 was able to produce 60.18% returns over the same period.
 A buy and hold strategy for the same 10 stocks yielded 40.34% over the same period.
 ### Performance Charts
 * ### META
-![alt text](https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images/META%20Chart.png)
+![alt text](https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images%20V2/META.png)
 * ### XOM
-![alt text](https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images/XOM%20Chart.png)
+![alt text](https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images%20V2/XOM.png)
 * ### JPM
-![alt text](https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images/JPM%20Chart.png)
+![alt text](https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images%20V2/JPM.png)
 * ### CVX
-![alt text](https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images/CVX%20Chart.png)
+![alt text](https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images%20V2/CVX.png)
 * ### HD
-![alt text](https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images/HD%20Chart.png)
+![alt text](https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images%20V2/HD.png)
 * ### BAC
-![alt text](https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images/BAC%20Chart.png)
+![alt text](https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images%20V2/BAC.png)
 * ### PFE
-![alt text](https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images/PFE%20Chart.png)
+![alt text](https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images%20V2/PFE.png)
 * ### ABBV
-![alt text](https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images/ABBV%20Chart.png)
+![alt text](https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images%20V2/ABBV.png)
 * ### MRK
-![alt text](https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images/MRK%20Chart.png)
+![alt text](https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images%20V2/MRK.png)
 * ### CSCO
-![alt text](https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images/CSCO%20Chart.png)
+![alt text](https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images%20V2/CSCO.png)
 
 ## Conclusion <a name="conclusion"></a>
 
