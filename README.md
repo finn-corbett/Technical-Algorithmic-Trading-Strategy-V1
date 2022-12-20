@@ -56,7 +56,7 @@ A buy signal is generated if:
 
 A sell signal is generated if:
 * The MACD value is less than the signal value AND
-* The RSI<60 AND
+* The RSI<70 AND
 * The RSI value is less than the value for the previous period
 
 ## Portfolio Allocation <a name="portfolio-allocation"></a>
