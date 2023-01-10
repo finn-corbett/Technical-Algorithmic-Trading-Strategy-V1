@@ -66,8 +66,8 @@ $10000 is allocated to each of the 10 stocks, and any losses or gains are applie
 
 ## Performance <a name="performance"></a>
 
-This algorithm was able to produce 33.50% returns over a 5 year period.
-A buy and hold strategy for the same 10 stocks yielded 40.34% over the same period.
+This algorithm was able to produce 33.50% returns over a 5 year period, with a standard deviation of ~13900.
+A buy and hold strategy for the same 10 stocks yielded 40.34% over the same period, with a standard deviation of 17600.
 ### Performance Charts
 * ### META
 ![alt text](https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images%20V2/META.png)
@@ -92,18 +92,17 @@ A buy and hold strategy for the same 10 stocks yielded 40.34% over the same peri
 
 ## Conclusion <a name="conclusion"></a>
 
-The performance of this strategy is not outstanding, it is able to generate positive returns, but will not outperform investing (long term) strategies such as 'buy and hold' for the same stocks, or index investing. This shows that the buy and sell signals are somewhat effective in generating returns.
+The trading strategy is able to maintain profits when applied to profitable stocks. It can be seen across the various performance graphs that the strategy is capable of preventing large losses, such as that of the market crash caused by COVID-19. Whilst maintaining a degree of profitability, the strategy is capable of reducing volatility. This trading strategy is best suited towards low-risk investors, although it requires excellent stock-picking.
 
 The main concerns with this strategy and algorithm are:
-* stock selection uses current data, but is tested historically. This makes the backtest innacurate for future results.
+* stock selection uses current data, but is tested historically. This makes the backtest innacurate for future results and cannot be compared to other strategies.
 * stop losses are not yet implimented, meaning that the algorithm may lose excessive amounts of money to large crashes.
 * algorithm must wait 30 days to calculate indicators properly, resulting in 30 days downtime when it is initiated
 
-trading-algo-0.2 will include:
+Future versions should include:
 * automated stock selection
-* more technical indicators with stacked LTSM model to learn which indicators are most effective for each stock
+* more technical indicators
 * more computationally efficient indicator calculation
-
-trading-algo-0.3 and beyond may include:
+* Machine learning for signal generation
 * more advanced portfolio allocation, including a cash position, based on volatility
 * sharpe ratio and alpha considerations
