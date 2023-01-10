@@ -1,6 +1,6 @@
 # trading-algo-0.1
 
-A simple stock trading algorithm, backtested for 5 years from Sep 1 2017 to Sep 1 2022.
+A stock trading algorithm, backtested for 5 years from Sep 1 2017 to Sep 1 2022. This algorithm has been developed to test a simple trading strategy and evaluate its performance in managing a stock portfolio. I have conducted this project to improve my programming and financial skills, alongside showcasing my abilities.
 ![alt text](https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images%20V2/Portfolio.png)
 
 ## Table of Contents
@@ -17,13 +17,13 @@ A simple stock trading algorithm, backtested for 5 years from Sep 1 2017 to Sep 
 
 ## About <a name="about"></a>
 
-This algorithm is a simple trading strategy, using 2 technical indicators to generate buy and sell signals for a selection of stocks.
+This algorithm is a simple trading strategy, using 2 technical indicators to generate buy and sell signals for a selection of stocks. It has been developed using historical stock pricing data from the Alpaca-py SDK.
 There is no live version of this strategy, the 'backtest.py' is the only file for this strategy. In order to use the backtest script, you must create an account with alpaca to get keys for their historical data API.
 
 # Features <a name="features"></a>
 ## Data Collection <a name="data-collection"></a>
 
-Stock pricing data is collected using the alpaca-py SDK, 5 years of historical daily ticker data is collected for each stock. This data includes daily open and close prices, which this algorithm requires.
+Stock pricing data is collected using the Alpaca-py SDK, 5 years of historical daily ticker data is collected for each stock. This data consists of daily close prices for each stock, which this algorithm computes indicators and buy/sell positions from.
 
 Data for stock selection is manually collected and processed, from TradingView.
 
