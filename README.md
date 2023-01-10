@@ -17,9 +17,7 @@ A simple stock trading algorithm, backtested for 5 years from Sep 1 2017 to Sep 
 ## About <a name="about"></a>
 
 This algorithm is a simple trading strategy, using 2 technical indicators to generate buy and sell signals for a selection of stocks.
-There is no live version of this strategy, the 'backtest.py' is the only file for this strategy, as improvements are desired before implementing a live version.
-
-This algorithm is not documented in depth, it is not intended for others to use, it is simply for me to improve my skills and showcase the results.
+There is no live version of this strategy, the 'backtest.py' is the only file for this strategy. In order to use the backtest file, you must create an account with alpaca to get keys for their historical data API.
 
 # Features <a name="features"></a>
 ## Data Collection <a name="data-collection"></a>
@@ -30,7 +28,11 @@ Data for stock selection is manually collected and processed, from TradingView.
 
 ## Stock Selection <a name="stock-selection"></a>
 
-Stocks are selected manually, future versions may include automatic stock selection and reselection. One issue with this version of the trading algorithm is that the stocks are selected on current data, but are tested against historic data. This is not representative of live performance, whereing stocks would be selected based on current data and be tested (or implemented live) against future data. This will undoubtedly affect the results, future algorithms should avoid this.
+Stocks are selected manually, with 10 large cap stocks being selected. One issue with this method is that the stocks are selected on current data, but are tested against historic data. This has the potential to introduce bias, wherein returns from this strategy may outperform other strategies as the highest cap stocks at the end of the backtest period were selected. This means that the stocks selected were likely to increase or maintain a high value during the 5 year backtest.
+
+As a result of this limitation, the returns from the trading strategy should only be compared against the buy and hold performance for the same stocks. Such results will indicate the ability of the strategy to 
+
+This is not representative of live performance, whereing stocks would be selected based on current data and be tested (or implemented live) against future data. This will undoubtedly affect the results, future algorithms should avoid this.
 
 The 10 stocks with the largest market capitalisation that meet these requirements are selected:
 
