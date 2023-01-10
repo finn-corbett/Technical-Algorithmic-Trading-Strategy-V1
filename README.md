@@ -1,6 +1,7 @@
 # trading-algo-0.1
 
 A simple stock trading algorithm, backtested for 5 years from Sep 1 2017 to Sep 1 2022.
+[!alt text](https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images%20V2/Portfolio.png)
 
 ## Table of Contents
 
@@ -17,7 +18,7 @@ A simple stock trading algorithm, backtested for 5 years from Sep 1 2017 to Sep 
 ## About <a name="about"></a>
 
 This algorithm is a simple trading strategy, using 2 technical indicators to generate buy and sell signals for a selection of stocks.
-There is no live version of this strategy, the 'backtest.py' is the only file for this strategy. In order to use the backtest file, you must create an account with alpaca to get keys for their historical data API.
+There is no live version of this strategy, the 'backtest.py' is the only file for this strategy. In order to use the backtest script, you must create an account with alpaca to get keys for their historical data API.
 
 # Features <a name="features"></a>
 ## Data Collection <a name="data-collection"></a>
@@ -30,9 +31,7 @@ Data for stock selection is manually collected and processed, from TradingView.
 
 Stocks are selected manually, with 10 large cap stocks being selected. One issue with this method is that the stocks are selected on current data, but are tested against historic data. This has the potential to introduce bias, wherein returns from this strategy may outperform other strategies as the highest cap stocks at the end of the backtest period were selected. This means that the stocks selected were likely to increase or maintain a high value during the 5 year backtest.
 
-As a result of this limitation, the returns from the trading strategy should only be compared against the buy and hold performance for the same stocks. Such results will indicate the ability of the strategy to 
-
-This is not representative of live performance, whereing stocks would be selected based on current data and be tested (or implemented live) against future data. This will undoubtedly affect the results, future algorithms should avoid this.
+As a result of this limitation, the returns from the trading strategy should only be compared against the buy and hold performance for the same stocks. Such results will indicate the ability of the strategy to generate additional returns by selling during downturns, and buying during predicted upwards price movements.
 
 The 10 stocks with the largest market capitalisation that meet these requirements are selected:
 
@@ -47,7 +46,7 @@ The algorithm calculates two indicators using the daily closing prices, that is 
 
 MACD is calculated by subtracting the 26 day EMA (exponential moving average) from the 12 day EMA. A signal line is created using the 9 day EMA which the MACD can be compared to, to generate buy and sell signals.
 
-RSI is caculated by looking at the previous 14 losses and gains to see if the price is trending upwards or downwards. Feel free to google exactly how it's calculated, investopedia is a great source.
+RSI is calculated by looking at the previous 14 losses and gains to see if the price is trending upwards or downwards. Feel free to google exactly how it's calculated, Investopedia is a great source.
 
 ## Signal Generation <a name="signal-generation"></a>
 
@@ -68,7 +67,6 @@ $10000 is allocated to each of the 10 stocks, and any losses or gains are applie
 ## Performance <a name="performance"></a>
 
 This algorithm was able to produce 33.50% returns over a 5 year period.
-The S&P500 was able to produce 60.18% returns over the same period.
 A buy and hold strategy for the same 10 stocks yielded 40.34% over the same period.
 ### Performance Charts
 * ### META
