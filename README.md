@@ -1,7 +1,7 @@
 # trading-algo-0.1
 
 A simple stock trading algorithm, backtested for 5 years from Sep 1 2017 to Sep 1 2022.
-[!alt text](https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images%20V2/Portfolio.png)
+![alt text](https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images%20V2/Portfolio.png)
 
 ## Table of Contents
 
