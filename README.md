@@ -2,7 +2,7 @@
 
 A stock trading algorithm, backtested for 5 years from Sep 1 2017 to Sep 1 2022. This algorithm has been developed to test a simple trading strategy and evaluate its performance in managing a stock portfolio. I have conducted this project to improve my programming and financial skills, alongside showcasing my abilities. 
 
-This graph compares the value of a portfolio managed by the trading algorithm against using the 'Buy and Hold' strategy for the same stocks. Each portfolio started the 5 year period with £10,000  
+This graph compares the value of a portfolio managed by the trading algorithm against using the 'Buy and Hold' strategy for the same stocks. Each portfolio started the 5 year period with £10,000.  
 <img src="https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images%20V2/Portfolio.png" alt="drawing" width="750"/>
 ## Table of Contents
 
@@ -18,19 +18,19 @@ This graph compares the value of a portfolio managed by the trading algorithm ag
 
 ## About <a name="about"></a>
 
-This algorithm is a simple trading strategy, using 2 technical indicators to generate buy and sell signals for a selection of stocks. It has been developed using historical stock pricing data from the Alpaca-py SDK.
+This algorithm is a simple trading strategy, using 2 technical indicators to generate buy and sell signals for a selection of stocks. It has been developed using historical stock pricing data from the Alpaca-py SDK. This strategy is allowed to buy and sell 10 different stocks.  
 There is no live version of this strategy, the 'backtest.py' is the only file for this strategy. In order to use the backtest script, you must create an account with alpaca to get keys for their historical data API.
 
 # Features <a name="features"></a>
 ## Data Collection <a name="data-collection"></a>
 
-Stock pricing data is collected using the Alpaca-py SDK, 5 years of historical daily ticker data is collected for each stock. This data consists of daily close prices for each stock, which this algorithm computes indicators and buy/sell positions from.
+Stock pricing data is collected using the Alpaca-py SDK, 5 years of historical daily ticker data is collected for each stock. This data used consists of daily close prices for each stock, which this algorithm computes indicators and buy/sell positions from.
 
 Data for stock selection is manually collected and processed, from TradingView.
 
 ## Stock Selection <a name="stock-selection"></a>
 
-Stocks are selected manually, with 10 large cap stocks being selected. One issue with this method is that the stocks are selected on current data, but are tested against historic data. This has the potential to introduce bias, wherein returns from this strategy may outperform other strategies as the highest cap stocks at the end of the backtest period were selected. This means that the stocks selected were likely to increase or maintain a high value during the 5 year backtest.
+Stocks are selected manually, with 10 large cap stocks being selected. One issue with this method is that the stocks are selected on current data, but are tested against historic data. This has the potential to introduce bias, wherein returns from this strategy may outperform other strategies as the highest cap stocks at the end of the backtest period were selected. This means that the stocks selected were likely to increase or maintain a high value during the 5 year backtest. This selection has been done to ensure that the strategy is employed on stocks that are frequently traded and have sensible fundementals.
 
 As a result of this limitation, the returns from the trading strategy should only be compared against the buy and hold performance for the same stocks. Such results will indicate the ability of the strategy to generate additional returns by selling during downturns, and buying during predicted upwards price movements.
 
@@ -38,8 +38,8 @@ The 10 stocks with the largest market capitalisation that meet these requirement
 
 * free float > 20%
 * EPS        > 0
-* P/E        < 20
-* P/S        < 15
+* P/E        < 20 AND > 0
+* P/S        < 14
 
 ## Indicators <a name="indicators"></a>
 
@@ -68,22 +68,22 @@ $10000 is allocated to each of the 10 stocks, and any losses or gains are applie
 ## Performance <a name="performance"></a>
 
 This algorithm was able to produce 33.50% returns over a 5 year period, with a standard deviation of ~13900.
-A buy and hold strategy for the same 10 stocks yielded 40.34% over the same period, with a standard deviation of 17600.
+A buy and hold strategy for the same 10 stocks yielded 40.34% over the same period, with a standard deviation of ~17600.
 ### Performance Charts
 * ### META
-![alt text](https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images%20V2/META.png)
+<img src="https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images%20V2/META.png" alt="drawing" width="750"/>
 * ### XOM
-![alt text](https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images%20V2/XOM.png)
+<img src="https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images%20V2/XOM.png" alt="drawing" width="750"/>
 * ### JPM
-![alt text](https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images%20V2/JPM.png)
+<img src="https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images%20V2/JPM.png" alt="drawing" width="750"/>
 * ### CVX
-![alt text](https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images%20V2/CVX.png)
+<img src="https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images%20V2/CVX.png" alt="drawing" width="750"/>
 * ### HD
-![alt text](https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images%20V2/HD.png)
+<img src="https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images%20V2/HD.png" alt="drawing" width="750"/>
 * ### BAC
-![alt text](https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images%20V2/BAC.png)
+<img src="https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images%20V2/BAC.png" alt="drawing" width="750"/>
 * ### PFE
-![alt text](https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images%20V2/PFE.png)
+<img src="https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images%20V2/PFE.png" alt="drawing" width="750"/>
 * ### ABBV
 ![alt text](https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images%20V2/ABBV.png)
 * ### MRK
