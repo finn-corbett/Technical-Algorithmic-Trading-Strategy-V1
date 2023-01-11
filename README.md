@@ -1,6 +1,6 @@
 # trading-algo-0.1
 
-A stock trading algorithm, backtested for 5 years from Sep 1 2017 to Sep 1 2022. This algorithm has been developed to test a simple trading strategy and evaluate its performance in managing a stock portfolio. I have conducted this project to improve my programming and financial skills, alongside showcasing my abilities.
+A stock trading algorithm, backtested for 5 years from Sep 1 2017 to Sep 1 2022. This algorithm has been developed to test a simple trading strategy and evaluate its performance in managing a stock portfolio. I have conducted this project to improve my programming and financial skills, alongside showcasing my abilities.  
 <img src="https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images%20V2/Portfolio.png" alt="drawing" width="400"/>
 ## Table of Contents
 
