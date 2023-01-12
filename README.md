@@ -4,7 +4,7 @@ A stock trading algorithm, backtested for 5 years from Sep 1 2017 to Sep 1 2022.
 
 This graph compares the value of a portfolio managed by the trading algorithm against using the 'Buy and Hold' strategy for the same stocks, and a Buy and Hold strategy applied to the S&P500 (SPY). Each portfolio started the 5 year period with £100,000.  
 <img src="https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images/Portfolio.png" alt="drawing" width="750"/>
-   ## Table of Contents
+### Table of Contents
 
 * [About](#about)
 * [Features](#features)
@@ -16,17 +16,17 @@ This graph compares the value of a portfolio managed by the trading algorithm ag
 * [Performance](#performance)
 * [Conclusion](#conclusion)
 
-   ## About <a name="about"></a>
+### About <a name="about"></a>
 
 This algorithm is a simple trading strategy, using 2 technical indicators to generate buy and sell signals for a selection of stocks. It has been developed using historical stock pricing data from the Alpaca-py SDK. This algorithm is allowed to buy and sell 10 different stocks.  
 There is no live version of this strategy, the 'backtest.py' is the only file for this strategy. In order to use the backtest script, you must create an account with alpaca to get keys for their historical data API.
 
 # Features <a name="features"></a>
-   ## Data Collection <a name="data-collection"></a>
+### Data Collection <a name="data-collection"></a>
 
 Stock pricing data is collected using the Alpaca-py SDK, 5 years of historical daily ticker data is collected for each stock. This data used consists of daily close prices for each stock, which this algorithm computes indicators and buy/sell positions from.
 
-   ## Stock Selection <a name="stock-selection"></a>
+### Stock Selection <a name="stock-selection"></a>
 
 Stocks are selected manually, with 10 large cap stocks being selected. Stocks were selected using the historical stock screener from ChartMills, the use of screening based on historical metrics eliminates bias in the stock selection process. This means that the algorithmic trading strategy presented in this report can be reliably compared to alternative investments.
 
@@ -50,7 +50,7 @@ VZ - Verizon Communications Inc.
 WFC - Wells Fargo & Co  
 BAC - Bank of America Corp  
 
-## Indicators <a name="indicators"></a>
+### Indicators <a name="indicators"></a>
 
 The algorithm calculates two indicators using the daily closing prices, that is the MACD (moving average convergence divergence) and RSI (relative strength index)
 
@@ -58,7 +58,7 @@ MACD is calculated by subtracting the 26 day EMA (exponential moving average) fr
 
 RSI is calculated by looking at the previous 14 losses and gains to see if the price is trending upwards or downwards. Feel free to google exactly how it's calculated, Investopedia is a great source.
 
-## Signal Generation <a name="signal-generation"></a>
+### Signal Generation <a name="signal-generation"></a>
 
 A buy signal is generated if:
 * The MACD value is greater than the signal value AND
@@ -68,11 +68,11 @@ A sell signal is generated if:
 * The MACD value is less than the signal value OR
 * The RSI<70 OR The RSI value is less than the value for the previous period
 
-## Portfolio Allocation <a name="portfolio-allocation"></a>
+### Portfolio Allocation <a name="portfolio-allocation"></a>
 
 $10000 is allocated to each of the 10 stocks, and any losses or gains are applied to this value, so that underperforming stocks take up a smaller portion of the portfolio, whilst overperforming stocks take up a larger portion. Any buy or sell signal sells and buys a stock with all of the money available to use for that stock. When buying and selling stocks, zero fees are assumed.
 
-## Performance <a name="performance"></a>
+### Performance <a name="performance"></a>
 
 This algorithm was able to produce 31.76% returns over a 5 year period, with an annualised daily return standard deviation of 6.45%.  
 A buy and hold strategy for the same 10 stocks yielded 56.67% over the same period, with an annualised daily return standard deviation of 19.46%.  
@@ -106,7 +106,7 @@ These performance results indicate the the algorithmic trading strategy is able 
 * ### BAC
 <img src="https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images/BAC.png" alt="drawing" width="750"/>
 
-## Conclusion <a name="conclusion"></a>
+### Conclusion <a name="conclusion"></a>
 
 The trading strategy is able to produce steady returns with preferable risk characteristics through a reduction in volatility. It can be seen across the various performance graphs that the strategy is capable of preventing large losses, such as that of the market crash caused by COVID-19. This trading strategy is best suited towards low-risk investors.
 
