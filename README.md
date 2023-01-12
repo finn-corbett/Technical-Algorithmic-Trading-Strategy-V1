@@ -86,25 +86,25 @@ Sharpe ratios for the 3 investment strategies are:
 These performance results indicate the the algorithmic trading strategy is able to reduce the risk compared to alternative investing strategies, such that the risk-adjusted returns are greater than that of the SPY. As the SPY is a widely used passive investing strategy, which is often implimented as a benchmark due to it's historic performance and passive nature. These results indicate the algorithmic trading strategy being useful for investors wishing to sacrifice some of their returns to reduce risk.  
 ### Performance Charts
 ### AAPL
-<img src="https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images/AAPL.png" alt="drawing" width="750"/>
+<img src="https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images/AAPL.png" alt="drawing" width="750"/>  
 ### BRK.B
-<img src="https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images/BRK-B.png" alt="drawing" width="750"/>
+<img src="https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images/BRK-B.png" alt="drawing" width="750"/>  
 ### NEE
-<img src="https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images/NEE.png" alt="drawing" width="750"/>
+<img src="https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images/NEE.png" alt="drawing" width="750"/>  
 ### JPM
-<img src="https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images/JPM.png" alt="drawing" width="750"/>
+<img src="https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images/JPM.png" alt="drawing" width="750"/>  
 ### T
-<img src="https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images/T.png" alt="drawing" width="750"/>
+<img src="https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images/T.png" alt="drawing" width="750"/>  
 ### PG
-<img src="https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images/PG.png" alt="drawing" width="750"/>
+<img src="https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images/PG.png" alt="drawing" width="750"/>  
 ### WMT
-<img src="https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images/WMT.png" alt="drawing" width="750"/>
+<img src="https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images/WMT.png" alt="drawing" width="750"/>  
 ### VZ
-<img src="https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images/VZ.png" alt="drawing" width="750"/>
+<img src="https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images/VZ.png" alt="drawing" width="750"/>  
 ### WFC
-<img src="https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images/WFC.png" alt="drawing" width="750"/>
+<img src="https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images/WFC.png" alt="drawing" width="750"/>  
 ### BAC
-<img src="https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images/BAC.png" alt="drawing" width="750"/>
+<img src="https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images/BAC.png" alt="drawing" width="750"/>  
 
 ### Conclusion <a name="conclusion"></a>
 
