@@ -30,16 +30,26 @@ Data for stock selection is manually collected and processed, from TradingView.
 
 ## Stock Selection <a name="stock-selection"></a>
 
-Stocks are selected manually, with 10 large cap stocks being selected. One issue with this method is that the stocks are selected on current data, but are tested against historic data. This has the potential to introduce bias, wherein returns from this strategy may outperform other strategies as the highest cap stocks at the end of the backtest period were selected. This means that the stocks selected were likely to increase or maintain a high value during the 5 year backtest. This selection has been done to ensure that the strategy is employed on stocks that are frequently traded and have sensible fundementals.
+Stocks are selected manually, with 10 large cap stocks being selected. Stock were selected using the historical stock screener from ChartMills, the use of screening based on historical metrics eliminates bias in the stock selection process. This means that the algorithmic trading strategy presented in this report can be reliably compared to alternative investments.
 
-As a result of this limitation, the returns from the trading strategy should only be compared against the buy and hold performance for the same stocks. Such results will indicate the ability of the strategy to generate additional returns by selling during downturns, and buying during predicted upwards price movements.
-
-The 10 stocks with the largest market capitalisation that meet these requirements are selected:
+The 10 stocks with the largest market capitalisation, within the IEX exchange, that meet these requirements are selected:
 
 * free float > 20%
 * EPS        > 0
 * P/E        < 20 AND > 0
 * P/S        < 14
+
+The resulting stocks selected are:  
+AAPL - Apple Inc  
+BRK.B - Berkshire Hathaway Inc Class B  
+NEE - NextEra Energy Inc  
+JPM - JPMorgan Chase & Co  
+T - AT&T Inc.  
+PG - Procter & Gamble Co  
+WMT - Walmart Inc  
+VZ - Verizon Communications Inc.  
+WFC - Wells Fargo & Co  
+BAC - Bank of America Corp  
 
 ## Indicators <a name="indicators"></a>
 
