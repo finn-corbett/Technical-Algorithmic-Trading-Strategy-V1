@@ -83,7 +83,7 @@ Sharpe ratios for the 3 investment strategies are:
 * Buy and Hold -     0.4646
 * SPY          -     0.4455
 
-These performance results indicate the the algorithmic trading strategy is able to reduce the risk compared to alternative investing strategies, such that the risk-adjusted returns are greater than that of the SPY. As the SPY is a widely used passive investing strategy, which is often implimented as a benchmark due to it's historic performance and passive nature. These results indicate the algorithmic trading strategy being useful for investors wishing to sacrifice some of their returns to reduce risk.  
+These performance results indicate the the algorithmic trading strategy is able to reduce the risk compared to alternative investing strategies, such that the risk-adjusted returns are greater than that of the SPY. The SPY is a widely used passive investing strategy, which is often implimented as a benchmark due to it's historic performance and passive nature. These results indicate the algorithmic trading strategy being useful for investors wishing to sacrifice some of their returns to reduce risk.  
 ### Performance Charts
 ### AAPL
 <img src="https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images/AAPL.png" alt="drawing" width="750"/> 
