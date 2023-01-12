@@ -2,7 +2,7 @@
 
 A stock trading algorithm, backtested for 5 years from Sep 1 2017 to Sep 1 2022. This algorithm has been developed to test a simple trading strategy and evaluate its performance in managing a stock portfolio. I have conducted this project to improve my programming and financial skills, alongside showcasing my abilities. 
 
-This graph compares the value of a portfolio managed by the trading algorithm against using the 'Buy and Hold' strategy for the same stocks, and a Buy and Hold strategy applied to the S&P500 (SPY). Each portfolio started the 5 year period with £100,000.  
+This graph compares the value of a portfolio managed by the trading algorithm against using the 'Buy and Hold' strategy for the same stocks, and a Buy and Hold strategy applied to the S&P500 (SPY). Each portfolio started the 5 year period with £100,000. The risk free rate for that 5 year period is included for comparison.
 <img src="https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images/Portfolio.png" alt="drawing" width="750"/>
 ### Table of Contents
 
@@ -82,6 +82,8 @@ Sharpe ratios for the 3 investment strategies are:
 * Algorithm    -     0.612
 * Buy and Hold -     0.4646
 * SPY          -     0.4455
+
+The sharpe ratios are calculated with a risk free rate of 1.809%, being the yield of the US 5 year treasury bond on Sep 1 2017.
 
 These performance results indicate the the algorithmic trading strategy is able to reduce the risk compared to alternative investing strategies, such that the risk-adjusted returns are greater than that of the SPY. The SPY is a widely used passive investing strategy, which is often implimented as a benchmark due to it's historic performance and passive nature. These results indicate the algorithmic trading strategy being useful for investors wishing to sacrifice some of their returns to reduce risk.  
 ### Performance Charts
