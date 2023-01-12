@@ -4,7 +4,7 @@ A stock trading algorithm, backtested for 5 years from Sep 1 2017 to Sep 1 2022.
 
 This graph compares the value of a portfolio managed by the trading algorithm against using the 'Buy and Hold' strategy for the same stocks, and a Buy and Hold strategy applied to the S&P500 (SPY). Each portfolio started the 5 year period with £100,000.  
 <img src="https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images/Portfolio.png" alt="drawing" width="750"/>
-## Table of Contents
+   ## Table of Contents
 
 * [About](#about)
 * [Features](#features)
@@ -16,17 +16,17 @@ This graph compares the value of a portfolio managed by the trading algorithm ag
 * [Performance](#performance)
 * [Conclusion](#conclusion)
 
-## About <a name="about"></a>
+   ## About <a name="about"></a>
 
 This algorithm is a simple trading strategy, using 2 technical indicators to generate buy and sell signals for a selection of stocks. It has been developed using historical stock pricing data from the Alpaca-py SDK. This algorithm is allowed to buy and sell 10 different stocks.  
 There is no live version of this strategy, the 'backtest.py' is the only file for this strategy. In order to use the backtest script, you must create an account with alpaca to get keys for their historical data API.
 
 # Features <a name="features"></a>
-## Data Collection <a name="data-collection"></a>
+   ## Data Collection <a name="data-collection"></a>
 
 Stock pricing data is collected using the Alpaca-py SDK, 5 years of historical daily ticker data is collected for each stock. This data used consists of daily close prices for each stock, which this algorithm computes indicators and buy/sell positions from.
 
-## Stock Selection <a name="stock-selection"></a>
+   ## Stock Selection <a name="stock-selection"></a>
 
 Stocks are selected manually, with 10 large cap stocks being selected. Stocks were selected using the historical stock screener from ChartMills, the use of screening based on historical metrics eliminates bias in the stock selection process. This means that the algorithmic trading strategy presented in this report can be reliably compared to alternative investments.
 
