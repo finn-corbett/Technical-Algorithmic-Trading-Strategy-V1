@@ -70,7 +70,7 @@ A sell signal is generated if:
 
 ## Portfolio Allocation <a name="portfolio-allocation"></a>
 
-$10000 is allocated to each of the 10 stocks, and any losses or gains are applied to this value, so that underperforming stocks take up a smaller portion of the portfolio, whilst overperforming stocks take up a larger portion. Any buy or sell signal sells and buys a stock with all of the money available to use for that stock. 
+$10000 is allocated to each of the 10 stocks, and any losses or gains are applied to this value, so that underperforming stocks take up a smaller portion of the portfolio, whilst overperforming stocks take up a larger portion. Any buy or sell signal sells and buys a stock with all of the money available to use for that stock. When buying and selling stocks, zero fees are assumed.
 
 ## Performance <a name="performance"></a>
 
@@ -83,7 +83,7 @@ Sharpe ratios for the 3 investment strategies are:
 * Buy and Hold -     0.4646
 * SPY          -     0.4455
 
-These performance results indicate the the algorithmic trading strategy is able to reduce the risk compared to alternative investing strategies, such that the risk-adjusted returns are greater than that of the SPY. As the SPY is a widely used passive investing strategy, which is often implimented as a benchmark due to it's historic performance and passive nature. These results indicate the algorithmic trading strategy being useful for investors wishing to sacrifice some of their returns to reduce risk.
+These performance results indicate the the algorithmic trading strategy is able to reduce the risk compared to alternative investing strategies, such that the risk-adjusted returns are greater than that of the SPY. As the SPY is a widely used passive investing strategy, which is often implimented as a benchmark due to it's historic performance and passive nature. These results indicate the algorithmic trading strategy being useful for investors wishing to sacrifice some of their returns to reduce risk.  
 ### Performance Charts
 * ### AAPL
 <img src="https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images/AAPL.png" alt="drawing" width="750"/>
@@ -108,10 +108,9 @@ These performance results indicate the the algorithmic trading strategy is able 
 
 ## Conclusion <a name="conclusion"></a>
 
-The trading strategy is able to maintain profits when applied to profitable stocks. It can be seen across the various performance graphs that the strategy is capable of preventing large losses, such as that of the market crash caused by COVID-19. Whilst maintaining a degree of profitability, the strategy is capable of reducing volatility. This trading strategy is best suited towards low-risk investors, although it requires excellent stock-picking.
+The trading strategy is able to produce steady returns with preferable risk characteristics through a reduction in volatility. It can be seen across the various performance graphs that the strategy is capable of preventing large losses, such as that of the market crash caused by COVID-19. This trading strategy is best suited towards low-risk investors.
 
 The main concerns with this strategy and algorithm are:
-* stock selection uses current data, but is tested historically. This makes the backtest innacurate for future results and cannot be compared to other strategies.
 * stop losses are not yet implimented, meaning that the algorithm may lose excessive amounts of money to large crashes.
 * algorithm must wait 30 days to calculate indicators properly, resulting in 30 days downtime when it is initiated
 
@@ -120,5 +119,4 @@ Future versions should include:
 * more technical indicators
 * more computationally efficient indicator calculation
 * Machine learning for signal generation
-* more advanced portfolio allocation, including a cash position, based on volatility
-* sharpe ratio and alpha considerations
+* more advanced and dynamic portfolio allocation
