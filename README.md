@@ -4,7 +4,7 @@ A stock trading algorithm, backtested for 5 years from Sep 1 2017 to Sep 1 2022.
   
 As of posting this report, I am a 4th year Meng Aerospace Engineering student. I began this project to take on a challenging new task which is outside my area of expertise, I have taught myself to code using Python and have conducted my own research to gain the skills necessary to complete this.
 
-This graph compares the value of a portfolio managed by the trading algorithm against using the 'Buy and Hold' strategy for the same stocks, and a Buy and Hold strategy applied to the S&P500 (SPY). Each portfolio started the 5 year period with £100,000. The risk free rate for that 5 year period is included for comparison. To briefly summarise the results, the trading strategy is able to choose performant stocks and maintain a reasonable degree of profitability whilst drastically reducing volatility/risk.
+This graph compares the value of a portfolio managed by the trading algorithm against using the 'Buy and Hold' strategy for the same stocks, and a Buy and Hold strategy applied to the S&P500 (SPY). Each portfolio started the 5 year period with £100,000. The risk free rate for that 5 year period is included for comparison. To briefly summarise the results, the trading strategy is able to choose performant stocks, which by trading them based on price movements can maintain a reasonable degree of profitability whilst greatly reducing volatility/risk.
 <img src="https://github.com/finn-corbett/trading-algo-0.1/blob/main/Images/Portfolio.png" alt="drawing" width="750"/>
 ### Table of Contents
 
