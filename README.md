@@ -72,7 +72,7 @@ A sell signal is generated if:
 
 ### Portfolio Allocation <a name="portfolio-allocation"></a>
 
-$10000 is allocated to each of the 10 stocks, and any losses or gains are applied to this value, so that underperforming stocks take up a smaller portion of the portfolio, whilst overperforming stocks take up a larger portion. Any buy or sell signal sells and buys a stock with all of the money available to use for that stock. When buying and selling stocks, zero fees are assumed.
+$10000 is allocated to each of the 10 stocks, and any losses or gains are applied to this value, so that underperforming stocks take up a smaller portion of the portfolio, whilst overperforming stocks take up a larger portion. Any buy or sell signal sells and buys a stock with all of the money available to use for that stock. When buying and selling stocks, zero fees are assumed and dividends are not accounted for.
 
 ### Performance <a name="performance"></a>
 
