@@ -21,7 +21,7 @@ This graph compares the value of a portfolio managed by the trading algorithm ag
 ### About <a name="about"></a>
 
 This algorithm is a simple trading strategy, using 2 technical indicators to generate buy and sell signals for a selection of stocks. It has been developed using historical stock pricing data from the Alpaca-py SDK. This algorithm is allowed to buy and sell 10 different stocks.  
-There is no live version of this strategy, the 'backtest.py' contains all of the code. In order to use the backtest script, you must create an account with alpaca to get keys for their historical data API.
+There is no live version of this strategy, the 'Technical Algorithmic Trading Strategy V1.py' contains all of the code. In order to use the backtest script, you must create an account with alpaca to get keys for their historical data API.
 
 # Features <a name="features"></a>
 ### Data Collection <a name="data-collection"></a>
