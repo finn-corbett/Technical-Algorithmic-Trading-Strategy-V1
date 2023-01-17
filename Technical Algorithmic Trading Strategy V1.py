@@ -1,33 +1,38 @@
+#Technical Algorithmic Trading Strategy V1
+#Produced by Finn Corbett
+
 from alpaca.data.historical import StockHistoricalDataClient
 from alpaca.data.requests import StockLatestQuoteRequest
 from alpaca.data.requests import StockBarsRequest
 from datetime import date
 from alpaca.data.timeframe import TimeFrame
 import pandas as pd
-Tickers=['META', 'XOM', 'JPM', 'CVX', 'HD', 'BAC', 'PFE', 'ABBV', 'MRK', 'CSCO']
+import numpy as np
+
+
+Tickers=['AAPL', 'BRK.B', 'NEE', 'JPM', 'T', 'PG', 'WMT', 'VZ', 'WFC', 'BAC']
 paper_market="https://paper-api.alpaca.markets"
-key = "key"
-secret = "secret key"
+key = "PKXGL3UM3EIW98H8CKD5"
+secret = "9thwX2uaiRD5wwhsvbsdhAtuIisfrXoYeXyj7s97"
 start="2017-09-01"
 end="2022-09-01"
 
 # VARIABLE SETUP #
-q=0
-algoperformance=pd.DataFrame(columns=Tickers)
-BnHperformance=pd.DataFrame(columns=Tickers)
-B=pd.DataFrame(columns=Tickers)
-S=pd.DataFrame(columns=Tickers)
+algoperformance=pd.DataFrame(columns=Tickers) #dataframe for tracking the value of the algorithmic portfolio
+BnHperformance=pd.DataFrame(columns=Tickers) #dataframe for tracking the value of the passive portfolio
+B=pd.DataFrame(columns=Tickers) #dataframe for storing buy signals
+S=pd.DataFrame(columns=Tickers) #dataframe for storing sell signals
 
+# FUNCTION SETUP #
+#function for calculating and storing Relative Strength Index
 def RSIarrays(data, i):
-    diff=data.iloc[i-1, 3]-data.iloc[i, 3]
+    diff=(data.iloc[i, 3]-data.iloc[i-1, 3])/data.iloc[i-1, 3]
     current_gain=0
     current_loss=0
     if diff>0:
         avg_gain.append(diff)
         avg_loss.append(0)
         current_gain=diff
-    if len(avg_gain)>=15:
-        avg_gain.pop(0)
     if diff<0:
         avg_loss.append(abs(diff))
         avg_gain.append(0)
@@ -37,9 +42,12 @@ def RSIarrays(data, i):
         avg_loss.append(diff)
     if len(avg_loss)>=15:
         avg_loss.pop(0)
+    if len(avg_gain)>=15:
+        avg_gain.pop(0)
     RSI=100-(100/(1+(sum(avg_gain)/sum(avg_loss))))
     RSI_array.append(RSI)
 
+#function for calculating and storing the Simple Moving Averages
 def SMAarrays(data, i):
     value=data.iloc[i, 3]
     close26_array.append(value)
@@ -53,6 +61,7 @@ def SMAarrays(data, i):
     SMA26_array.append(SMA26)
     SMA12_array.append(SMA12)
 
+#functions for storing the Exponential Moving Average
 def EMA26arrays(data, i):
     if i<25:
         EMA26_array.append(SMA26_array[i])
@@ -69,6 +78,7 @@ def EMA12arrays(data, i):
         EMA12=(data.iloc[i, 3]*(2/(1+12)))+(EMA12_array[i-1]*(1-(2/(1+12))))
         EMA12_array.append(EMA12)  
 
+#functions for computing Moving Average Convergence Divergence
 def MACDSMA9arrays(i):
     MACD=EMA12_array[i]-EMA26_array[i]
     MACD9_array.append(MACD)
@@ -85,9 +95,12 @@ def MACDEMA9arrays(i):
         MACDEMA9=(MACDSMA9_array[i]*(2/(1+9)))+(MACDEMA9_array[i-1]*(1-(2/(1+9))))
         MACDEMA9_array.append(MACDEMA9)  
 
+#establish historical data client
 hsclient = StockHistoricalDataClient(key, secret)
 
+# MAIN CODE BODY #
 for q in range (0, len(Tickers)):
+    #establish lists for technical indicators
     avg_gain=[]
     avg_loss=[]
     RSI_array=[]
@@ -101,6 +114,7 @@ for q in range (0, len(Tickers)):
     EMA26_array=[]
     EMA12_array=[]
     MACDEMA9_array=[]
+    #collect stock data
     quote_request_params=StockLatestQuoteRequest(symbol_or_symbols=Tickers)
     dbar_request_params=StockBarsRequest(
         symbol_or_symbols=Tickers[q],
@@ -111,12 +125,19 @@ for q in range (0, len(Tickers)):
     latest_quote=hsclient.get_stock_latest_quote(quote_request_params)
     bars=hsclient.get_stock_bars(dbar_request_params)
     data=bars.df
-    print(data)
+    #establish variables for trading loop
     i=0
     cash=10000
     stock_cnt=0
     data_len=len(data)
+    #for loop to simulate days
     for i in range(0, data_len-1):
+        #stock split price adjustements for NEE and AAPL
+        if q==2 and i>=793:
+            data.iat[i, 3]=data.iloc[i, 3]*4
+        if q==0 and i>=753:
+            data.iat[i, 3]=data.iloc[i, 3]*4
+        #call functions for calculating technical indicators
         RSIarrays(data, i)
         SMAarrays(data, i)
         EMA26arrays(data, i)
@@ -124,18 +145,21 @@ for q in range (0, len(Tickers)):
         MACDSMA9arrays(i)
         MACDEMA9arrays(i)
         MACD=EMA12_array[i]-EMA26_array[i]
-        if  i>26+9 and cash>0 and MACD>MACDEMA9_array[i] and RSI_array[i]>30 and RSI_array[i]>RSI_array[i-1]:
+        #buy conditions
+        if  i>26+9 and cash>0 and (MACD>MACDEMA9_array[i] and (RSI_array[i]>30 or RSI_array[i]>RSI_array[i-1])):
             stock_cnt=cash/data.iloc[i, 3]
             cash=0
             signal=1
-        elif  i>26+9 and stock_cnt>0 and MACD<MACDEMA9_array[i] and RSI_array[i]<60 and RSI_array[i]<RSI_array[i-1]:
+        #sell conditions
+        elif  i>26+9 and stock_cnt>0 and (MACD<MACDEMA9_array[i] or (RSI_array[i]<70 or RSI_array[i]<RSI_array[i-1])):
             cash=stock_cnt*data.iloc[i, 3]
             stock_cnt=0
             signal=-1
         else:
             signal=0
-        PFvalue=cash+stock_cnt*data.iloc[i, 3]
-        buynhold=10000*(data.iloc[i, 3]/data.iloc[0, 3])
+        PFvalue=cash+stock_cnt*data.iloc[i, 3] #calculate algorithmic portfolio value
+        buynhold=10000*(data.iloc[i, 3]/data.iloc[0, 3]) #calculate passive portfolio value
+        #DATA COLLATION
         if q==0:
             algoperformance=algoperformance.append({Tickers[q]:PFvalue}, ignore_index=True)
             BnHperformance=BnHperformance.append({Tickers[q]:buynhold}, ignore_index=True)
@@ -163,12 +187,9 @@ for q in range (0, len(Tickers)):
 
 print(algoperformance)
 print(BnHperformance)
-percentdiff=100*(sum(algoperformance.iloc[-1].tolist())/sum(BnHperformance.iloc[-1].tolist()))
-print(percentdiff)
-endval=sum(BnHperformance.iloc[-1].tolist())
-print(endval)
-#algoperformance.to_csv('algoperformance.CSV')
-#BnHperformance.to_csv('BnHperformance.CSV')
+algovalue=pd.DataFrame().append([sum(algoperformance.iloc[n].tolist()) for n in range(0,len(algoperformance))])
+BnHvalue=pd.DataFrame().append([sum(BnHperformance.iloc[n].tolist()) for n in range(0,len(BnHperformance))])
+#algovalue.to_csv('algovalue.CSV')
+#BnHvalue.to_csv('BnHvalue.CSV')
 #B.to_csv('buy signals.CSV')
 #S.to_csv('sell signals.CSV')
-#data.to_csv('date.CSV')
